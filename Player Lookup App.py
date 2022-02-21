@@ -16,7 +16,10 @@ while True:
 	for j in search(query, tld="co.in", num=10, stop=10, pause=2):
 		print(j)
 	
-	
+	urL=input("Paste the URL you would like to go to: ")
+	chrome_path="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+	webbrowser.register('chrome', None,webbrowser.BackgroundBrowser(chrome_path))
+	webbrowser.get('chrome').open_new_tab(urL)
 
 	while True:
 		answer = str(input("Run again? (y/n): "))
